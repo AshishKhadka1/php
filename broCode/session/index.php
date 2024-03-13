@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-   <form action="form.php" method="GET">
+   <form action="form.php" method="post">
      <label for="">username: </label>
     <input type="text" name="username" id=""><br><br>
 
@@ -18,12 +22,3 @@
 
 </body>
 </html>
-
-<?php 
-    $username = null;
-    $password = null;
-    
-    echo "{$_GET["username"]}<br>";
-    echo $_GET["password"]
-
-?>
