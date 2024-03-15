@@ -1,0 +1,47 @@
+1. GET METHOD :
+-> The GET method is primarily used to request data from a specified resource.
+-> When a form is submitted using the GET method, the form data is appended to the URL as query parameters.
+-> GET requests can be cached and bookmarked, and they remain in the browser history. They are also visible in the URL, making them less secure for sensitive data.
+-> GET requests have limitations on the amount of data that can be sent, typically up to 2048 characters.
+-> GET requests should be used for idempotent actions, i.e., actions that don't change the state of the server or database. For example, searching for products on an e-commerce website.
+
+
+2. POST METHOD :
+-> The POST method is used to submit data to be processed to a specified resource.
+-> When a form is submitted using the POST method, the form data is sent in the body of the HTTP request.
+-> POST requests are not cached or bookmarked, and they do not remain in the browser history. They are more secure for transmitting sensitive data because the data is not visible in the URL.
+-> POST requests have no limitations on the amount of data that can be sent, allowing for larger payloads compared to GET requests.
+-> POST requests should be used for actions that modify server or database state, such as submitting a registration form or making a purchase.
+
+
+3. When to Choose GET over POST:
+Use GET when the form submission doesn't involve changing the server or database state, such as searching or retrieving data.
+GET requests are suitable for cases where the data being transmitted is not sensitive, and you want to make the data bookmarkable or shareable via URL.
+
+
+4. When to Choose POST over GET:
+Use POST when the form submission involves changing the server or database state, such as submitting a form to create, update, or delete data.
+POST requests are suitable for transmitting sensitive data, such as login credentials or payment information, because the data is not exposed in the URL.
+
+
+5. Search Form:
+Suppose you have a search form on your website where users can search for products. Since searching is an idempotent action and doesn't change the server state, you would use the GET method. 
+For example:
+
+
+<form action="search.php" method="get">
+    <input type="text" name="query">
+    <input type="submit" value="Search">
+</form>
+
+
+6. User Registration Form:
+When a user submits a registration form to create a new account, sensitive data such as username and password are involved. Therefore, you would use the POST method to ensure that this data is sent securely in the request body. 
+For example:
+
+
+<form action="register.php" method="post">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <input type="submit" value="Register">
+</form>
