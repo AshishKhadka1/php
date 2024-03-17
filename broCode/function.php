@@ -1,53 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <br>
-    <form action="function.php" method="POST">
-        <label for="">username: </label>
-        <input type="text" name="username"><br><br>
-        <label for="">password: </label>
-        <input type="password" name="password"><br><br>
-        <input type="submit" name="login" value="log in">
-    </form><br>
-</body>
-</html>
 <?php
-    // $username = "brocode";
+function happy_birthday($name, $age)
+{
+    echo "happy birthday dear {$name} <br> ";
+    echo "happy birthday to you <br> ";
+    echo "many many happy returns of the day {$name} <br> ";
+    echo "you are {$age} years old <br><br>";
+}
 
-    // isset() = Returns TRUE if a variable is declared and not null
-    // echo isset($username);
-    
-
-    // empty() = Returns TRUE if a variable is not declared, false, null, ""
-    // if(empty($username)){
-    //     echo"This variable is empty";
-    // }else{
-    //     echo"This variable is not empty";
-    // }
-
-    // foreach($_POST as $key =>$value){
-    //     echo"{$key} = {$value} <br>";
-    // }
-
-    if(isset($_POST['login'])){
-        $username = $_POST["username"];
-        $password = $_POST["password"];
-
-        if(empty($username)){
-            echo"username is missing";
-        }
-        elseif(empty($password)){
-            echo"password is missing";
-        }
-        else{
-            echo"Successfully login";
-        }
-    }
+happy_birthday("spongebob", 33);
+happy_birthday("patrik", 5);
 
 
+// next video 
+// $username = "Ashish Khadka sir";
+
+$username = array("bro", "the", "coder");
+
+
+$phone = '123-456';
+
+// $username = strtolower($username);
+// $username = strtoupper($username);
+// $username = trim($username);
+// $username = str_pad($username, 20, "0");
+// $phone = str_replace("-", "&", $phone);
+// $username = strrev($username);
+// $username = str_shuffle($username);
+// $equals = strcmp("aman", $username);
+// $username = strlen($username);
+// $username = strpos($username, " ");
+// $firstname = substr($username, 0, 7);
+
+// $fullname = explode(" ", $username);
+$username = implode("_", $username);
+
+// foreach($fullname as $name){     //for explode only
+//     echo $name ."<br>";
+
+// }
+
+echo $username
 ?>
+
